@@ -2,6 +2,9 @@
 
 Alright
 
+
+halloooooo
+
 Take 4, lets go.
 
 Hey marcus var her
@@ -30,3 +33,6 @@ dette!!!!
 er!!!
 \n
 en ny merge test!!!!
+##################################
+### DETTE ER EN ENDRING ##########
+##################################
