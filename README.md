@@ -11,3 +11,9 @@ testlinje fra glorytiger
 Work please
 Work. Work.
 
+hei
+på
+deg,
+dette
+er
+en ny merge test
