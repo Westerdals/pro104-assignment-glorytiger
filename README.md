@@ -11,6 +11,10 @@ Useful lines:
 git add .
 git commit -m "Melding"
 git push
+
+git reset --hard
+
+
 testlinje fra glorytiger
 Work please
 Work. Work.
