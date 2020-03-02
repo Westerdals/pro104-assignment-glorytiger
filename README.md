@@ -5,3 +5,4 @@ Hey marcus var her
 
 Useful lines:
 git commit -m "Melding"
+git push
