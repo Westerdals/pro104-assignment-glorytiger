@@ -13,14 +13,14 @@ testlinje fra glorytiger
 Work please
 Work. Work.
 
-hei
+hei!!!!!
 /n
-på
+på!!!!
 \n
-deg,
+deg,!!!!
 \n
-dette
+dette!!!!
 /n
-er
+er!!!
 \n
-en ny merge test
+en ny merge test!!!!
