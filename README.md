@@ -1,38 +1,20 @@
 "# pro104-assignment-gruppe13" 
 
-Alright
-
-
-halloooooo
-
-Take 4, lets go.
-
-Hey marcus var her
-Merging?
-
-Useful lines:
+#Brukeguide i git:#
 git add .
 git commit -m "Melding"
 git push
 
+
 git reset --hard
 
 
-testlinje fra glorytiger
-Work please
-Work. Work.
+#Konflikt ved merge:#
+git fetch
+git pull
 
-hei!!!!!
-/n
-på!!!!
-\n
-deg,!!!!
-\n
-dette!!!!
-/n
-er!!!
-\n
-en ny merge test!!!!
-##################################
-### DETTE ER EN ENDRING ##########
-##################################
+(Dersom merge ikke fungerer: git status, velg fil fra statusen og fjern manuelt <<<<<< HEAD ==== >>>>> (+checksum))
+
+git add .
+git commit -m "melding"
+Git push.
