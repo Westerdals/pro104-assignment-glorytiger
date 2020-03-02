@@ -2,6 +2,8 @@
 
 Alright
 
+Take 4, lets go.
+
 Hey marcus var her
 Merging?
 
