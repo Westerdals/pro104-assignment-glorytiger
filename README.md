@@ -9,5 +9,5 @@ git commit -m "Melding"
 git push
 testlinje fra glorytiger
 Work please
-
+Work. Work.
 
