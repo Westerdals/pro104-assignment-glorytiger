@@ -1,5 +1,7 @@
 "# pro104-assignment-gruppe13" 
 
+Alright
+
 Hey marcus var her
 Merging?
 
