@@ -12,8 +12,13 @@ Work please
 Work. Work.
 
 hei
+/n
 på
+\n
 deg,
+\n
 dette
+/n
 er
+\n
 en ny merge test
