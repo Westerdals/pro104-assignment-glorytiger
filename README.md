@@ -1,5 +1,5 @@
     "# pro104-assignment-gruppe13" 
-Du lukter vondt
+
 #Brukeguide i git:#
 git clone "url"
 
