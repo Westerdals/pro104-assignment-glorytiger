@@ -1,6 +1,8 @@
     "# pro104-assignment-gruppe13" 
 
 #Brukeguide i git:#
+git clone "url"
+
 git add .
 git commit -m "Melding"
 git push
@@ -19,3 +21,5 @@ git add .
 git commit -m "melding"
 Git push.
 hei
+
+Yessiiirrrr
