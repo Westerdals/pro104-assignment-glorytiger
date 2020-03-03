@@ -1,20 +1,20 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="createTask.js"></script>
+    <script type="text/javascript" src="createMember.js"></script>
+    <script type="text/javascript" src="showTasks.js"></script>
+    <script type="text/javascript" src="showMembers.js"></script>
 </head>
 <body>
-
-<script type="text/javascript" src="index.js">
-
-</script>
-
 
 <h1>Nettside</h1>
 
 
 <h2>Opprette arbeidsoppgave</h2>
 
-<form onsubmit="createNewTask(event)">
+<form onsubmit="createTask(event)">
     <div>
         <label>Navn:
             <div><input name="task-name" placeholder="Navn på arbeidsoppgave" /></div>
@@ -26,10 +26,10 @@
 </form>
 
 <h2>Opprette ansatt</h2>
-<form onsubmit="createNewMember(event)">
+<form onsubmit="createMember(event)">
     <div>
         <label>Navn:
-            <div><input name="member-name" placeholder="Navn på ansatt" /></div>
+            <div><input name="member-name" placeholder="Navn på teammedlem" /></div>
         </label>
     </div>
     <div>
@@ -39,7 +39,9 @@
 
 <div id="taskList"></div>
 
-<input type="button" onclick="renderTaskList()" value="Vis arbeidsoppgaver">
+<input type="button" onclick="showTasks()" value="Vis arbeidsoppgaver">
+<input type="button" onclick="showMembers()" value="Vis teammedlemmer">
+
 <div id="output-div"></div>
 
 </body>
