@@ -1,11 +1,9 @@
 function createNewProduct(event) {
     //event.preventDefault();
     
-alert("EY");
-    
     // Find an element with attribute "name" as "name". In this case <input name="name" placeholder="Product ..."
     // and retrives the .value - what the user wrote in the <input>
-    const name = document.querySelector("[name='name']").value;
+    const name = document.querySelector("[name='task-name']").value;
     
     // Object construction shorthand - this is the same as writing
     //const product = {
