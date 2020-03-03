@@ -4,12 +4,17 @@
 </head>
 <body>
 
+<script type="text/javascript" src="index.js">
+
+</script>
+
+
 <h1>Nettside</h1>
 
 
 <h2>Oprette arbeidsoppgave</h2>
 
-<form onsubmit="createNewProduct(event)">
+<form onsubmit="createNewTask(event)">
     <div>
         <label>Navn:
             <div><input name="task-name" placeholder="Navn på arbeidsoppgave" /></div>
@@ -21,7 +26,7 @@
 </form>
 
 <h2>Opprette ansatt</h2>
-<form onsubmit="#">
+<form onsubmit="createNewMember(event)">
     <div>
         <label>Navn:
             <div><input name="member-name" placeholder="Navn på ansatt" /></div>
@@ -32,8 +37,5 @@
     </div>
 </form>
 
-<script type="text/javascript" src="index.js">
-
-</script>
 </body>
 </html>
