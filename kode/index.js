@@ -51,3 +51,36 @@ function createNewMember(event) {
     // "stringify" the productList back into a String and write it back to LocalStorage
     window.localStorage.setItem("memberList", JSON.stringify(memberList));
 }
+
+function renderTaskList() {
+    // Returns the named entry in LocalStorage AS A STRING (text)
+    const taskListInLocalStorage = window.localStorage.getItem("taskList");
+    
+    // Interprets ("parses") the string into OBJECTS
+    let taskList = JSON.parse(taskListInLocalStorage);
+    
+    // If there was nothing in LocalStorage, we replace the productList with an empty list
+    if (taskList == undefined) {
+        taskList = [];
+    }
+    
+    // Finds the element "<div id='taskList'></div>" in the document
+    // (because of "id=taskList")
+    const taskListEl = document.getElementById("taskList");
+    taskListEl.innerHTML = "";
+    for (const task of taskList) {
+        // Creates a new "<div></div>" - this is currently not anywhere in the document
+        const taskEl = document.createElement("div");
+
+        // "Destructoring" - this is the same as writing
+        //const name = task.name;
+        // etc, for name
+        const { name } = task;
+        
+        // Update the contents inside the <div></div>
+        taskEl.innerHTML = `<h4>${name}</h4>`;
+        
+        // Adds the new <div> to the "<div id='productList'></div>"
+        taskListEl.appendChild(taskEl);
+    }
+}
