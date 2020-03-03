@@ -1,6 +1,3 @@
-// Finds the element "<div id='output-div'></div>" in the document
-// (because of "id=output-div")
-const outputDiv = document.getElementById("output-div");
 
 function createNewTask(event) {
     //event.preventDefault();
@@ -59,6 +56,8 @@ function createNewMember(event) {
 function renderTaskList() {
     // Returns the named entry in LocalStorage AS A STRING (text)
     const taskListInLocalStorage = window.localStorage.getItem("taskList");
+
+
     
     // Interprets ("parses") the string into OBJECTS
     let taskList = JSON.parse(taskListInLocalStorage);
@@ -67,6 +66,10 @@ function renderTaskList() {
     if (taskList == undefined) {
         taskList = [];
     }
+
+    // Finds the element "<div id='output-div'></div>" in the document
+    // (because of "id=output-div")
+    let outputDiv = document.getElementById("output-div");
     
     outputDiv.innerHTML = "";
     for (const task of taskList) {
