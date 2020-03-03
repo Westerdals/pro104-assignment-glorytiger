@@ -13,7 +13,7 @@ function showMembers() {
     // Finds the element "<div id='outputDiv'></div>" in the document
     // (because of "id=memberList")
     let outputDiv = document.getElementById("output-div");
-    outputDiv.innerHTML = "Name:";
+    outputDiv.innerHTML = `<b>Navn:</b>`;
 
     for (const member of memberList) {
         // Creates a new "<div></div>" - this is currently not anywhere in the document

@@ -13,7 +13,7 @@ function showTasks() {
     // Finds the element "<div id='output-div'></div>" in the document
     // (because of "id=output-div")
     let outputDiv = document.getElementById("output-div");
-    outputDiv.innerHTML = "Name: Assigned member:";
+    outputDiv.innerHTML = `<b>Navn: Tildelt:</b>`;
     
     for (const task of taskList) {
         // Creates a new "<div></div>" - this is currently not anywhere in the document
