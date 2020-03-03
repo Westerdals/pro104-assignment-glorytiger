@@ -26,3 +26,4 @@ alert("EY");
     // "stringify" the productList back into a String and write it back to LocalStorage
     window.localStorage.setItem("taskList", JSON.stringify(taskList));
 }
+
