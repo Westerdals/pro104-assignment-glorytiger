@@ -1,3 +1,7 @@
+// Finds the element "<div id='output-div'></div>" in the document
+// (because of "id=output-div")
+const outputDiv = document.getElementById("output-div");
+
 function createNewTask(event) {
     //event.preventDefault();
     
@@ -64,10 +68,7 @@ function renderTaskList() {
         taskList = [];
     }
     
-    // Finds the element "<div id='taskList'></div>" in the document
-    // (because of "id=taskList")
-    const taskListEl = document.getElementById("taskList");
-    taskListEl.innerHTML = "";
+    outputDiv.innerHTML = "";
     for (const task of taskList) {
         // Creates a new "<div></div>" - this is currently not anywhere in the document
         const taskEl = document.createElement("div");
@@ -81,6 +82,6 @@ function renderTaskList() {
         taskEl.innerHTML = `<h4>${name}</h4>`;
         
         // Adds the new <div> to the "<div id='productList'></div>"
-        taskListEl.appendChild(taskEl);
+        outputDiv.appendChild(taskEl);
     }
 }
