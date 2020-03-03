@@ -1,5 +1,16 @@
 body {
     background-color: darksalmon;
-    
 }
 
+/* Align horizontally */
+#task-feedback-div,
+#member-feedback-div {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+/* Set top and bottom margin */
+input[type=button],
+input[type=submit] {
+    margin: 1px 0;
+}
