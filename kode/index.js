@@ -38,6 +38,9 @@ function createNewTask(event) {
     taskList.push(task);
     // "stringify" the productList back into a String and write it back to LocalStorage
     window.localStorage.setItem("taskList", JSON.stringify(taskList));
+    
+    // Clean values from <form>
+    event.target.reset();
 }
 
 function createNewMember(event) {
@@ -67,6 +70,9 @@ function createNewMember(event) {
     memberList.push(member);
     // "stringify" the productList back into a String and write it back to LocalStorage
     window.localStorage.setItem("memberList", JSON.stringify(memberList));
+
+    // Clean values from <form>
+    event.target.reset();
 }
 
 function renderTaskList() {
@@ -84,8 +90,8 @@ function renderTaskList() {
     // Finds the element "<div id='output-div'></div>" in the document
     // (because of "id=output-div")
     let outputDiv = document.getElementById("output-div");
-    outputDiv.innerHTML = "";
-
+    outputDiv.innerHTML = "Name: Assigned member:";
+    
     for (const task of taskList) {
         // Creates a new "<div></div>" - this is currently not anywhere in the document
         const taskEl = document.createElement("div");
@@ -96,11 +102,24 @@ function renderTaskList() {
         //const memberId = task.memberId;
         // etc, for name
         const { id, name, memberId } = task;
+
+        const memberListInLocalStorage = window.localStorage.getItem("memberList");
+        let memberList = JSON.parse(memberListInLocalStorage);
+        if (memberList == undefined) {
+            memberList = [];
+        }
+        
+        // Convert memberId from task to memberName from memberList
+        let memberName = '';
+        for (const member of memberList) {
+            if (member.id = id) {
+                memberName = member.name;
+            }
+        }
         
         // Update the contents inside the <div></div>
-        taskEl.innerHTML = `id: ${id}
-            name: ${name}
-            memberId: ${memberId}<br>`;
+        taskEl.innerHTML += `${name}
+            ${memberName}<br>`;
         
         // Adds the new <div> to the "<div id='productList'></div>"
         outputDiv.appendChild(taskEl);
@@ -122,7 +141,7 @@ function renderMemberList() {
     // Finds the element "<div id='outputDiv'></div>" in the document
     // (because of "id=memberList")
     let outputDiv = document.getElementById("output-div");
-    outputDiv.innerHTML = "";
+    outputDiv.innerHTML = "Name:";
 
     for (const member of memberList) {
         // Creates a new "<div></div>" - this is currently not anywhere in the document
@@ -135,8 +154,7 @@ function renderMemberList() {
         const { id, name } = member;
         
         // Update the contents inside the <div></div>
-        memberEl.innerHTML = `id: ${id}
-            name: ${name}<br>`;
+        memberEl.innerHTML = `${name}<br>`;
         
         // Adds the new <div> to the "<div id='memberList'></div>"
         memberListEl.appendChild(memberEl);
