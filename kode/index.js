@@ -1,14 +1,24 @@
+var taskIdCount = getListLength('taskList');
+var memberIdCount = getListLength('memberList');
+
+function getListLength(listName) {
+    if (localStorage.hasOwnProperty(listName)) {
+        return Object.keys(JSON.parse(localStorage.getItem(listName))).length;
+    } else {
+        return 0;
+    }
+}
 
 function createNewTask(event) {
-    //event.preventDefault();
+    event.preventDefault();
     
-    const id = 0;
+    const id = memberIdCount++;
 
     // Find an element with attribute "name" as "name". In this case <input name="name" placeholder="Product ..."
     // and retrives the .value - what the user wrote in the <input>
     const name = document.querySelector("[name='task-name']").value;
 
-    const memberId = 0;
+    const memberId = -1;
     
     // Object construction shorthand - this is the same as writing
     //const product = {
@@ -31,9 +41,9 @@ function createNewTask(event) {
 }
 
 function createNewMember(event) {
-    //event.preventDefault();
+    event.preventDefault();
     
-    const id = 0;
+    const id = memberIdCount++;
 
     // Find an element with attribute "name" as "name". In this case <input name="name" placeholder="Product ..."
     // and retrives the .value - what the user wrote in the <input>
@@ -62,8 +72,6 @@ function createNewMember(event) {
 function renderTaskList() {
     // Returns the named entry in LocalStorage AS A STRING (text)
     const taskListInLocalStorage = window.localStorage.getItem("taskList");
-
-
     
     // Interprets ("parses") the string into OBJECTS
     let taskList = JSON.parse(taskListInLocalStorage);
@@ -76,8 +84,6 @@ function renderTaskList() {
     // Finds the element "<div id='output-div'></div>" in the document
     // (because of "id=output-div")
     let outputDiv = document.getElementById("output-div");
-    
-  
     outputDiv.innerHTML = "";
 
     for (const task of taskList) {
@@ -115,8 +121,9 @@ function renderMemberList() {
     
     // Finds the element "<div id='outputDiv'></div>" in the document
     // (because of "id=memberList")
-    const memberListEl = document.getElementById("outputDiv");
-    memberListEl.innerHTML = "";
+    let outputDiv = document.getElementById("output-div");
+    outputDiv.innerHTML = "";
+
     for (const member of memberList) {
         // Creates a new "<div></div>" - this is currently not anywhere in the document
         const memberEl = document.createElement("div");
