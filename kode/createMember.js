@@ -30,9 +30,7 @@ function createMember(event) {
 
     // Find the task matching taskId and store member id.
     for (let i = 0; i < taskList.length && taskId != -1; i++) {
-        console.log(taskList[i]+"vs"+taskId);
         if (taskList[i].id == taskId) {
-            console.log("match");
             taskList[i].memberId = id;
             
             // "stringify" the productList back into a String and write it back to LocalStorage

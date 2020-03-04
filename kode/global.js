@@ -28,12 +28,18 @@ function populateTasksDropdown() {
     emptyEl.textContent = "ingen";
     emptyEl.value = -1;
     tasksDropdown.appendChild(emptyEl);
-
+    
+    // Populate dropdown box with available tasks from taskList
     for (let i = 0; i < taskList.length; i++) {
-        let el = document.createElement("option");
-        el.textContent = taskList[i].name;
-        el.value = taskList[i].id;
-        tasksDropdown.appendChild(el);
+        
+        // Only tasks that has no linked members should be visible    
+        if (taskList[i].memberId == -1) {
+
+            let el = document.createElement("option");
+            el.textContent = taskList[i].name;
+            el.value = taskList[i].id;
+            tasksDropdown.appendChild(el);
+        }
     }
 }
 
