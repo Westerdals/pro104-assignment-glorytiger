@@ -16,7 +16,32 @@ function createMember(event) {
         feedbackDiv.innerHTML = "Feltet kan ikke være tomt";
         return;
     }
+    
+    // Get the taskList
+    const taskListInLocalStorage = window.localStorage.getItem("taskList");
+    let taskList = JSON.parse(taskListInLocalStorage);
+    if (taskList == undefined) {
+        taskList = [];
+    }
 
+    // Get the taskId from the dropdown box.
+    const el = document.getElementById("tasks-dropdown");
+    const taskId = el.options[el.selectedIndex].value;
+
+    // Find the task matching taskId and store member id.
+    for (let i = 0; i < taskList.length && taskId != -1; i++) {
+        console.log(taskList[i]+"vs"+taskId);
+        if (taskList[i].id == taskId) {
+            console.log("match");
+            taskList[i].memberId = id;
+            
+            // "stringify" the productList back into a String and write it back to LocalStorage
+            window.localStorage.setItem("taskList", JSON.stringify(taskList));
+
+            break;
+        }
+    }
+    
     // Object construction shorthand - this is the same as writing
     //const member = {
     //    id: id,

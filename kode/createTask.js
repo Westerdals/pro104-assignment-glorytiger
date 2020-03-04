@@ -41,6 +41,8 @@ function createTask(event) {
     // Display a feedback message to the user
     feedbackDiv.innerHTML = "Oppgave ble lagt til";
     
+    populateTasksDropdown();
+    
     // Clean values from <form>
     event.target.reset();
 }

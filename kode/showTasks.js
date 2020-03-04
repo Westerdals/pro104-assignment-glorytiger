@@ -35,8 +35,11 @@ function showTasks() {
         // Convert memberId from task to memberName from memberList
         let memberName = '';
         for (const member of memberList) {
-            if (member.id = id) {
-                //memberName = member.name;
+            console.log(member.id+"vs"+id);
+            if (member.id == memberId) {
+                console.log("match: "+memberName);
+                memberName = member.name;
+                break;
             }
         }
         

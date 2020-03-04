@@ -38,7 +38,6 @@
     <div>
         <label>Tildele oppgave:
             <select id="tasks-dropdown">
-                <option value="none">ingen</option>
             </select>
         </label>
     </div>
@@ -54,6 +53,10 @@
 <input type="button" onclick="showMembers()" value="Vis teammedlemmer">
 
 <div id="output-div"></div>
+
+<script>
+    populateTasksDropdown();
+</script>
 
 </body>
 </html>
