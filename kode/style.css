@@ -3,8 +3,8 @@ body {
 }
 
 /* Align horizontally */
-#task-feedback-div,
-#member-feedback-div {
+#task-name-feedback-div,
+#member-name-feedback-div {
     display: inline-block;
     margin: 0 auto;
 }

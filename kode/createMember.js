@@ -1,22 +1,22 @@
 function createMember(event) {
     event.preventDefault();
     
-    // Get the number of element stored in "taskList" in localStorage. 
-    const id = getListLength("memberList");
-
     // Find an element with attribute "name" as "name". In this case <input name="name" placeholder="Product ..."
     // and retrives the .value - what the user wrote in the <input>
-    const name = document.querySelector("[name='member-name']").value;
+    const name = document.querySelector("[name='member-name-in']").value;
     
     // Find the element with id "task-feedback-div". This will be used to provide feedback to the user
-    let feedbackDiv = document.getElementById("member-feedback-div");
+    let nameFeedbackDiv = document.getElementById("member-name-feedback-div");
 
     // Check if the text field is empty. If it is, write a message in the feedback div and return
     if (name === '') {
-        feedbackDiv.innerHTML = "Feltet kan ikke være tomt";
+        nameFeedbackDiv.innerHTML = "Feltet kan ikke være tomt";
         return;
     }
     
+    // Find a valid id by counting the number of elements in "memberList". 
+    const id = getUniqueListId("memberList");
+
     // Get the taskList
     const taskListInLocalStorage = window.localStorage.getItem("taskList");
     let taskList = JSON.parse(taskListInLocalStorage);

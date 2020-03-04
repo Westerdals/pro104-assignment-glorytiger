@@ -1,9 +1,21 @@
-function getListLength(list) {
-    if (localStorage.hasOwnProperty(list)) {
-        return Object.keys(JSON.parse(localStorage.getItem(list))).length;
-    } else {
+function getUniqueListId(listName) {
+
+    const list = JSON.parse(window.localStorage.getItem(listName));
+    
+    if (list == undefined) {
         return 0;
     }
+    
+    let usedIds = [];
+    for (const entry of list) {
+        usedIds[entry.id] = true;
+    }
+    
+    let id = 0;
+    do {
+    } while (usedIds[id++] == true);
+
+    return id;
 }
 
 function populateTasksDropdown() {
