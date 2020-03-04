@@ -1,7 +1,7 @@
 function createMember(event) {
     event.preventDefault();
     
-    const id = memberIdCount++;
+    const id = getListLength("memberList");
 
     // Find an element with attribute "name" as "name". In this case <input name="name" placeholder="Product ..."
     // and retrives the .value - what the user wrote in the <input>

@@ -1,7 +1,7 @@
 function createTask(event) {
     event.preventDefault();
     
-    const id = memberIdCount++;
+    const id = getListLength("taskList");
 
     // Find an element with attribute "name" as "name". In this case <input name="name" placeholder="Product ..."
     // and retrives the .value - what the user wrote in the <input>
