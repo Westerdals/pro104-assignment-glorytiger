@@ -1,6 +1,7 @@
 function createMember(event) {
     event.preventDefault();
     
+    // Get the number of element stored in "taskList" in localStorage. 
     const id = getListLength("memberList");
 
     // Find an element with attribute "name" as "name". In this case <input name="name" placeholder="Product ..."
