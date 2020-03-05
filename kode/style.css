@@ -1,16 +1,69 @@
 body {
-    background-color: darksalmon;
+  background-color: darksalmon;
 }
 
 /* Align horizontally */
-#task-name-feedback-div,
+/*#task-name-feedback-div,
 #member-name-feedback-div {
     display: inline-block;
     margin: 0 auto;
+}*/
+
+form#task,
+form#member {
+  font-size: 16px;
+  align-items: center;
 }
 
-/* Set top and bottom margin */
-input[type=button],
-input[type=submit] {
-    margin: 1px 0;
+select {
+  height: 1.6em;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 10px repeat(3, auto) 10px;
+  grid-auto-rows: auto;
+}
+
+#container>.header {
+  grid-column: 2 / 5;
+}
+
+form>.header {
+  grid-column: 1 / 3;
+}
+
+form#task {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: auto;
+}
+
+form#member {
+  grid-column: 4 / 5;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: auto;
+}
+
+.feedback,
+.submit {
+  grid-column: 2 / 3;
+  height: 1.4em;
+}
+
+#hruler {
+  grid-column: 2 / 5;
+}
+
+#list-buttons {
+  grid-column: 2 / 5;
+}
+
+#list {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: auto;
 }

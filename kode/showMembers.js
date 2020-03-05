@@ -1,4 +1,6 @@
 function showMembers() {
+    clearOutputs();
+    
     // Returns the named entry in LocalStorage AS A STRING (text)
     const memberListInLocalStorage = window.localStorage.getItem("memberList");
     
@@ -12,7 +14,7 @@ function showMembers() {
     
     // Finds the element "<div id='outputDiv'></div>" in the document
     // (because of "id=memberList")
-    let outputDiv = document.getElementById("output-div");
+    let outputDiv = document.getElementById("output-div1");
     outputDiv.innerHTML = `<b>Navn:</b>`;
 
     for (const member of memberList) {

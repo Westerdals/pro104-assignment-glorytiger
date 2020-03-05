@@ -1,4 +1,6 @@
 function showTasks() {
+    clearOutputs();
+
     // Returns the named entry in LocalStorage AS A STRING (text)
     const taskListInLocalStorage = window.localStorage.getItem("taskList");
     
@@ -12,12 +14,15 @@ function showTasks() {
 
     // Finds the element "<div id='output-div'></div>" in the document
     // (because of "id=output-div")
-    let outputDiv = document.getElementById("output-div");
-    outputDiv.innerHTML = `<b>Arbeidsoppgave:</b>`;
+    let outputDiv1 = document.getElementById("output-div1");
+    let outputDiv2 = document.getElementById("output-div2");
+    outputDiv1.innerHTML = `<b>Arbeidsoppgave:</b>`;
+    outputDiv2.innerHTML = `<b>Tildelt:</b>`;
     
     for (const task of taskList) {
         // Creates a new "<div></div>" - this is currently not anywhere in the document
-        const taskEl = document.createElement("div");
+        const taskEl1 = document.createElement("div");
+        const taskEl2 = document.createElement("div");
 
         // "Destructoring" - this is the same as writing
         //const id = task.id;
@@ -44,10 +49,11 @@ function showTasks() {
         }
         
         // Update the contents inside the <div></div>
-        taskEl.innerHTML += `${name}
-            ${memberName}<br>`;
+        taskEl1.innerHTML = `${name}<br>`;
+        taskEl2.innerHTML = `${memberName}<br>`;
         
         // Adds the new <div> to the "<div id='productList'></div>"
-        outputDiv.appendChild(taskEl);
+        outputDiv1.appendChild(taskEl1);
+        outputDiv2.appendChild(taskEl2);
     }
 }

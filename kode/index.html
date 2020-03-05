@@ -10,56 +10,98 @@
 </head>
 <body>
 
+<div id="container">
 
-
-<h1>Arbeidskrav</h1>
-
-
-<h2>Opprette arbeidsoppgave</h2>
-
-<form onsubmit="createTask(event)">
-    <div>
-        <label>Navn:
-            <div>
-                <input name="task-name-in" placeholder="Navn på arbeidsoppgave" />
-                <div id="task-name-feedback-div"></div>
-            </div>
-        </label>
+    <div class="header">
+        <h1>Arbeidskrav</h1>
     </div>
-    <div>
-        <input type="submit" />
+
+    <form id="task" onsubmit="createTask(event)">
+        
+        <div class="header">
+            <h2>Opprette arbeidsoppgave</h2>
+        </div>
+
+        <div class="name">
+            <label>Navn:</label>
+        </div>
+
+        <div class="input">
+            <input name="task-name-in" placeholder="Navn på arbeidsoppgave" />
+        </div>
+    
+        <div class="feedback">
+            <div id="task-name-feedback-div"></div>
+        </div>
+        
+        <div class="submit">
+            <input type="submit" />
+        </div>
+        
+        <div class="feedback">
+            <div id="task-submit-feedback-div"></div>
+        </div>
+
+    </form>
+
+    <form id="member" onsubmit="createMember(event)">
+
+        <div class="header">
+            <h2>Opprette teammedlem</h2>
+        </div>
+        
+        <div class="name">
+            <label>Navn:</label>
+        </div>
+        
+        <div class="input">
+            <input name="member-name-in" placeholder="Navn på teammedlem" />
+        </div>
+        
+        <div class="feedback">
+            <div id="member-name-feedback-div"></div>
+        </div>
+        
+        <div id="assignment">
+            <label>Tildeling:</label>
+        </div>
+        
+        <div id="dropdown">
+            <select id="tasks-dropdown"></select>
+        </div>
+        
+        <div class="submit">
+            <input type="submit" />
+        </div>
+        
+        <div class="feedback">
+            <div id="member-submit-feedback-div"></div>
+        </div>
+    </form>
+    
+    <div id="hruler">
+        <hr>
     </div>
-</form>
-
-<h2>Opprette teammedlem</h2>
-
-<form onsubmit="createMember(event)">
-    <div>
-        <label>Navn:
-            <div>
-                <input name="member-name-in" placeholder="Navn på teammedlem" />
-                <div id="member-name-feedback-div"></div>
-            </div>
-   
-        </label>
+    
+    <div id="list-buttons">
+        <input type="button" onclick="showTasks()" value="Vis arbeidsoppgaver">
+        <input type="button" onclick="showMembers()" value="Vis teammedlemmer">
     </div>
-    <div>
-        <label>Tildeling:
-            <select id="tasks-dropdown">
-            </select>
-        </label>
+
+    <div id="list">
+        
+        <div id="output-div1">
+        </div>
+
+        <div id="output-div2">
+        </div>
+        
     </div>
-    <div>
-        <input type="submit" />
-    </div>
-</form>
 
-<hr>
+</div>
+    
 
-<input type="button" onclick="showTasks()" value="Vis arbeidsoppgaver">
-<input type="button" onclick="showMembers()" value="Vis teammedlemmer">
 
-<div id="output-div"></div>
 
 <script>
     populateTasksDropdown();

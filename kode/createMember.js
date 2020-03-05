@@ -1,16 +1,16 @@
 function createMember(event) {
     event.preventDefault();
+
+    clearFeedbacks();
     
     // Find an element with attribute "name" as "name". In this case <input name="name" placeholder="Product ..."
     // and retrives the .value - what the user wrote in the <input>
     const name = document.querySelector("[name='member-name-in']").value;
     
-    // Find the element with id "task-feedback-div". This will be used to provide feedback to the user
-    let nameFeedbackDiv = document.getElementById("member-name-feedback-div");
-
     // Check if the text field is empty. If it is, write a message in the feedback div and return
+    const feedbackDiv1 = document.getElementById("member-name-feedback-div");
     if (name === '') {
-        nameFeedbackDiv.innerHTML = "Feltet kan ikke være tomt";
+        feedbackDiv1.innerHTML = "Feltet kan ikke være tomt";
         return;
     }
     
@@ -60,8 +60,11 @@ function createMember(event) {
     window.localStorage.setItem("memberList", JSON.stringify(memberList));
     
     // Display a feedback message to the user
-    feedbackDiv.innerHTML = "Teammedlem ble lagt til";
+    const feedbackDiv2 = document.getElementById("member-submit-feedback-div");
+    feedbackDiv2.innerHTML = "Teammedlem ble lagt til";
     
+    populateTasksDropdown();
+
     // Clean values from <form>
     event.target.reset();
 }

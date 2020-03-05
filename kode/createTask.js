@@ -1,16 +1,16 @@
 function createTask(event) {
     event.preventDefault();
     
+    clearFeedbacks();
+
     // Find an element with attribute "name" as "name". In this case <input name="name" placeholder="Product ..."
     // and retrives the .value - what the user wrote in the <input>
     const name = document.querySelector("[name='task-name-in']").value;
     
-    // Find the element with id "task-feedback-div". This will be used to provide feedback to the user
-    let feedbackDiv = document.getElementById("task-name-feedback-div");
-
     // Check if the text field is empty. If it is, write a message in the feedback div and return
+    const feedbackDiv1 = document.getElementById("task-name-feedback-div");
     if (name === '') {
-        feedbackDiv.innerHTML = "Feltet kan ikke være tomt";
+        feedbackDiv1.innerHTML = "Feltet kan ikke være tomt";
         return;
     }
 
@@ -39,7 +39,8 @@ function createTask(event) {
     window.localStorage.setItem("taskList", JSON.stringify(taskList));
     
     // Display a feedback message to the user
-    feedbackDiv.innerHTML = "Oppgave ble lagt til";
+    const feedbackDiv2 = document.getElementById("task-submit-feedback-div");
+    feedbackDiv2.innerHTML = "Oppgave ble lagt til";
     
     populateTasksDropdown();
     

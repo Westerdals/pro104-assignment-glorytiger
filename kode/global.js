@@ -8,14 +8,27 @@ function getUniqueListId(listName) {
     
     let usedIds = [];
     for (const entry of list) {
+        console.log("usedIds["+entry.id+"] = true");
         usedIds[entry.id] = true;
     }
     
     let id = 0;
     do {
-    } while (usedIds[id++] == true);
+    } while (usedIds[++id] == true);
 
     return id;
+}
+
+function clearFeedbacks() {
+    document.getElementById("task-name-feedback-div").innerHTML = "";
+    document.getElementById("task-submit-feedback-div").innerHTML = "";
+    document.getElementById("member-name-feedback-div").innerHTML = "";
+    document.getElementById("member-submit-feedback-div").innerHTML = "";
+}
+
+function clearOutputs() {
+    document.getElementById("output-div1").innerHTML = "";
+    document.getElementById("output-div2").innerHTML = "";
 }
 
 function populateTasksDropdown() {
