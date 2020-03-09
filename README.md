@@ -1,6 +1,14 @@
 "# pro104-assignment-gruppe13" 
 
-#Brukeguide i git:#
+Følgende medlemmer har deltatt i prosjektet:
+- Christian
+- Christopher
+- Marcus
+- Martine
+- Olav
+
+
+Brukeguide i git:
 git clone "url"
 
 git add .
@@ -11,7 +19,7 @@ git push
 git reset --hard
 
 
-#Konflikt ved merge:#
+Konflikt ved merge:
 git fetch
 git pull
 
