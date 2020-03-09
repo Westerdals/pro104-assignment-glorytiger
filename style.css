@@ -19,9 +19,10 @@ select {
   height: 1.6em;
 }
 
+/* Main grid */
 #container {
   display: grid;
-  grid-template-columns: 10px repeat(3, auto) 10px;
+  grid-template-columns: 10px minmax(auto, 400px) 10px minmax(auto, 400px) 10px;
   grid-auto-rows: auto;
 }
 
