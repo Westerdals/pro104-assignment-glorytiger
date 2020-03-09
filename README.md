@@ -6,6 +6,7 @@ Følgende medlemmer har deltatt i prosjektet:
 - Marcus
 - Martine
 - Olav
+- Tahïr
 
 
 Brukeguide i git:
